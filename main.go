@@ -25,6 +25,13 @@ type Training struct {
 
 // distance возвращает дистанцию, которую преодолел пользователь.
 // Формула расчета:
+type Training struct {
+	TrainingType string        // тип тренировки
+	Action       int           // количество повторов(шаги, гребки при плавании)
+	LenStep      float64       // длина одного шага или гребка в м
+	Duration     time.Duration // продолжительность тренировки
+	Weight       float64       // вес пользователя в кг
+}
 // количество_повторов * длина_шага / м_в_км
 func (t Training) distance() float64 {
 	// вставьте ваш код ниже
