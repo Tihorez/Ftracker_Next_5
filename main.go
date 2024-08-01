@@ -128,8 +128,9 @@ func (w Walking) Calories() float64 {
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
 // Это переопределенный метод TrainingInfo() из Training.
 func (w Walking) TrainingInfo() InfoMessage {
-	// вставьте ваш код ниже
-	...
+	info := w.Training.TrainingInfo()
+	info.Calories = w.Calories()
+	return info
 }
 
 // Константы для расчета потраченных килокалорий при плавании.
