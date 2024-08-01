@@ -44,11 +44,11 @@ func (t Training) Calories() float64 {
 
 // InfoMessage содержит информацию о проведенной тренировке.
 type InfoMessage struct {
-	 TrainingType string        // тип тренировки
-	 Duration     time.Duration // длительность тренировки
-	 Distance     float64       // расстояние, которое преодолел пользователь
-	 Speed        float64       // средняя скорость, с которой двигался пользователь
-	 Calories     float64       // количество потраченных килокалорий на тренировке
+	TrainingType string        // тип тренировки
+	Duration     time.Duration // длительность тренировки
+	Distance     float64       // расстояние, которое преодолел пользователь
+	Speed        float64       // средняя скорость, с которой двигался пользователь
+	Calories     float64       // количество потраченных килокалорий на тренировке
 }
 
 // TrainingInfo возвращает труктуру InfoMessage, в которой хранится вся информация о проведенной тренировке.
@@ -178,15 +178,12 @@ func (s Swimming) TrainingInfo() InfoMessage {
 // ReadData возвращает информацию о проведенной тренировке.
 func ReadData(training CaloriesCalculator) string {
 	// получите количество затраченных калорий
-	calories := ...
-
-	// получите информацию о тренировке
-	info := ...
-	// добавьте полученные калории в структуру с информацией о тренировке
-	...
-
-	return fmt.Sprint(info)
+	info := training.TrainingInfo()
+	return info.String()
 }
+
+// получите информацию о тренировке
+// добавьте полученные калории в структуру с информацией о тренировке
 
 func main() {
 
